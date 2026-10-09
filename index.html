@@ -108,7 +108,7 @@
   @keyframes scrollAnim { 0%,100%{opacity:.3} 50%{opacity:1} }
 
   /* Stats */
-  .stats-bar { display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border); }
+  .stats-bar { display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border); }
   .stat-item { text-align:center;padding:2.2rem 1rem;border-right:1px solid var(--light-border); }
   .stat-item:last-child { border-right:none; }
   .stat-num { font-family:'Bebas Neue',sans-serif;font-size:2.8rem;font-weight:400;color:var(--rose);display:block;line-height:1; }
@@ -213,7 +213,7 @@
   .svc-tag { font-size:.57rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose);border:1px solid var(--light-border);padding:.3rem .7rem; }
 
   /* Instagram KPI bar */
-  .ig-stats-bar { border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);padding:3.5rem 4rem;background:#fdf8f9; }
+  .ig-stats-bar { display:none;border-top:1px solid var(--light-border);border-bottom:1px solid var(--light-border);padding:3.5rem 4rem;background:#fdf8f9; }
   .ig-stats-label { font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:2.5rem; }
   .ig-stats-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:960px;margin:0 auto; }
   .ig-kpi { background:#fff;border:1px solid var(--light-border);border-top:3px solid var(--rose);padding:1.6rem 1.4rem;text-align:center;transition:box-shadow .3s; }
@@ -483,7 +483,7 @@
       <div class="badge-avatar">M</div>
       <div class="badge-info">
         <span class="badge-handle">@thatroamfluencer</span>
-        <span class="badge-stat">2.5K Followers · 8.5% Avg Engagement</span>
+        <span class="badge-stat">~3.5K Followers</span>
       </div>
       <div class="badge-dot"></div>
     </div>
@@ -497,10 +497,9 @@
 
 <!-- Stats -->
 <div class="stats-bar">
-  <div class="stat-item reveal"><span class="stat-num">2.5K+</span><span class="stat-label">Instagram Followers</span></div>
-  <div class="stat-item reveal d1"><span class="stat-num">5+</span><span class="stat-label">Countries Explored</span></div>
-  <div class="stat-item reveal d2"><span class="stat-num">10+</span><span class="stat-label">Brand Campaigns</span></div>
-  <div class="stat-item reveal d3"><span class="stat-num">8.5%</span><span class="stat-label">Avg Engagement Rate</span></div>
+  <div class="stat-item reveal"><span class="stat-num">~3.5K</span><span class="stat-label">Instagram Followers</span></div>
+  <div class="stat-item reveal d1"><span class="stat-num">4</span><span class="stat-label">Content Verticals</span></div>
+  <div class="stat-item reveal d2"><span class="stat-num">10K</span><span class="stat-label">Follower Goal</span></div>
 </div>
 
 <!-- Work -->
@@ -978,6 +977,7 @@
       document.getElementById('igTotalFollowers').textContent = fmt(data.profile?.followers_count || 0);
       document.getElementById('igEngRate').textContent        = avgEng + '%';
       document.getElementById('liveBadge2').style.display   = 'inline-flex';
+      document.querySelector('.ig-stats-bar').style.display = 'block';
 
       // Show live badge
       document.getElementById('liveBadge').style.display = 'inline-flex';
